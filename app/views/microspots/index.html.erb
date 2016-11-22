@@ -1,0 +1,23 @@
+ <div class="container">
+    <div class="row">  
+     <% @microspots.each do |microspot| %>
+      <div class="col-md-4">
+        <div class="panel panel-body">
+
+          <%= image_tag microspot.image.url(:medium), class: 'img-responsive'%>
+           <p> <%= truncate(microspot.content , length: 250 ) %></p>
+         
+            <%= microspot.user_id %> 
+            <%= link_to 'Show', microspot %> 
+            <%= link_to 'Edit', edit_microspot_path(microspot) %> 
+            <%= link_to 'Destroy', microspot, method: :delete, data: { confirm: 'Are you sure?' } %> 
+        </div>
+       
+      </div> 
+
+    <% end %>
+  
+    
+
+   </div>   
+   </div>  

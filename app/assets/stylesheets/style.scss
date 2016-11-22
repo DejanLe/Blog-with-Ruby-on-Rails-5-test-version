@@ -1,0 +1,15 @@
+body{
+	font: 300 15px/1.6 'Open Sans', sans-serif;
+    color: #555;
+    word-wrap: break-word;
+    hyphens: auto;
+    margin-top: 3px;
+}
+a{
+	color:orange;
+	text-decoration:none !important;
+	transition: all 0.5s;
+}
+a:hover{
+	color:#111;
+}
