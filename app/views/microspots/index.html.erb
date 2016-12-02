@@ -9,8 +9,14 @@
          
             <%= microspot.user_id %> 
             <%= link_to 'Show', microspot %> 
-            <%= link_to 'Edit', edit_microspot_path(microspot) %> 
-            <%= link_to 'Destroy', microspot, method: :delete, data: { confirm: 'Are you sure?' } %> 
+
+
+            <% if user_signed_in? %> 
+              
+                 <%= link_to 'Edit', edit_microspot_path(microspot) %> 
+                 <%= link_to 'Destroy', microspot, method: :delete, data: { confirm: 'Are you sure?' } %> 
+                  
+            <% end %>   
         </div>
        
       </div> 

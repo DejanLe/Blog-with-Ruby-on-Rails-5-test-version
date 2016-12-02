@@ -10,10 +10,20 @@
 
 				<p>
 				  <strong><em>Author:</em></strong>
-				  <%= @microspot.user_id %>
+				   <%= @microspot.user_id %>
+				 
 				</p>
 
-				<%= link_to 'Edit', edit_microspot_path(@microspot) %> |
+ 			<% if user_signed_in? %> 
+              <% if @microspot.user_id == current_user.id %>  
+
+				<%= link_to 'Edit', edit_microspot_path(@microspot) %> 
+
+				  <% end %>
+            <% end %> 
+
+
+				|
 				<%= link_to 'Back', microspots_path %>
  			</div> 
    		</div>   

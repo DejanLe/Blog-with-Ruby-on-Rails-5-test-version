@@ -4,15 +4,22 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="panel panel-body">
               <p>User: <%= user.name %> </p>
-              <p>Email:  <%= user.email %> </p>
+            
               <%= link_to 'Show', user %> 
-             <%= link_to 'Edit', edit_user_path(user) %> 
-             <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %> 
+
+
+<% if user_signed_in? %>
+
+               
+              <p>Email:  <%= user.email %> </p>
+              <%= link_to 'Edit', edit_user_path(user) %> 
+              <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %> 
+             
              </div>
           </div>
       <% end %>
-
-     <%= link_to 'New User', new_user_path %>
+<% end %>
+     
     </div> 
    </div>   
  
